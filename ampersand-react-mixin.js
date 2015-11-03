@@ -52,6 +52,9 @@ module.exports = events.createEmitter({
         if (this.autoWatch !== false) {
             forEach(this.props, this.watch, this);
         }
+        //Autowatch model and collection when including the mixin
+        watch(this.props.model);
+        watch(this.props.collection);
     },
 
     componentWillUnmount: function () {
